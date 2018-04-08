@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import 查詢 from './元件/查詢';
 import 顯示結果 from './元件/顯示結果';
+import { MainSection } from 'demo-ui';
 import './App.css';
 
 let 音標服務 = "https://服務.意傳.台灣/標漢字音標"
@@ -36,7 +37,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="App">
+      <MainSection>
         <查詢 
           預設句子={this.state.句子}
           handleClick={this.查}/>
@@ -45,7 +46,7 @@ class App extends React.Component {
           <顯示結果 多元書寫={this.state.多元書寫}/>
           : null
         }
-      </div>
+      </MainSection>
     );
   }
 }
