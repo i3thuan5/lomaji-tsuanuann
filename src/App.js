@@ -1,16 +1,28 @@
-import React, { Component } from 'react';
+import React from 'react';
+import 查詢 from './元件/查詢';
 import './App.css';
 
-class App extends Component {
+class App extends React.Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      句子: 'abc',
+      綜合標音: null
+    };
+  }
+
+  查(句子) {
+    console.log(句子);
+    // ajax.get('/...').query('句子')
+  }
+
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and sui2 to reload.
-        </p>
+        <查詢 
+          預設句子={this.state.句子}
+          handleClick={this.查.bind(this)}
+        />
       </div>
     );
   }
