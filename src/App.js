@@ -31,7 +31,7 @@ class App extends React.Component {
     }.bind(this))
     .catch(function (error) {
       console.log('error', error);
-    }.bind(this));
+    });
   }
 
   render() {
@@ -40,7 +40,11 @@ class App extends React.Component {
         <查詢 
           預設句子={this.state.句子}
           handleClick={this.查}/>
-        <顯示結果 多元書寫={this.state.多元書寫}/>
+        {
+          this.state.多元書寫 ?
+          <顯示結果 多元書寫={this.state.多元書寫}/>
+          : null
+        }
       </div>
     );
   }
