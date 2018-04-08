@@ -1,13 +1,13 @@
 import React from 'react';
 
-class 查詢 extends React.Component {
+class 查詢 extends React.PureComponent {
   送出(e) {
     e.preventDefault();
     let 句子 = this.refText.value;
     this.props.handleClick(句子);
   }
   render() {
-    let {預設句子} = this.props;
+    let {預設句子, 正在查詢} = this.props;
     return (
       <form className='ui form'
        onSubmit={this.送出.bind(this)}>
@@ -19,7 +19,11 @@ class 查詢 extends React.Component {
         </div>
 
         <div className="app clearing">
-          <button type='submit'>查</button>
+          <button className={
+            `ui huge primary right floated button ${
+            正在查詢 ? "disabled" : ""}`}
+            type='submit'
+          >查</button>
         </div>
 
       </form>

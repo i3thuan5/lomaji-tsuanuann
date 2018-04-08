@@ -12,12 +12,17 @@ class App extends React.Component {
     super(props);
     this.state = {
       句子: '大家共下來',
+      正在查詢: false,
       多元書寫: null
     };
     this.查 = this.查.bind(this);
   }
 
   查(句子) {
+    this.setState({
+      正在查詢: true,
+    });
+
     axios.get(音標服務, {
       params: {
         查詢腔口: "閩南語",
@@ -27,23 +32,31 @@ class App extends React.Component {
     .then(function (response) {
       if(response.data.hasOwnProperty('多元書寫')
         && response.data.length !== 0){
-        this.setState({多元書寫: response.data.多元書寫});
+        this.setState({
+          多元書寫: response.data.多元書寫,
+          正在查詢: false
+        });
       }
     }.bind(this))
     .catch(function (error) {
       console.log('error', error);
-    });
+      this.setState({
+        正在查詢: false,
+      });
+    }.bind(this));
   }
 
   render() {
+    let {句子, 正在查詢, 多元書寫} = this.state;
     return (
       <MainSection>
         <查詢 
-          預設句子={this.state.句子}
+          預設句子={句子}
+          正在查詢={正在查詢}
           handleClick={this.查}/>
         {
           this.state.多元書寫 ?
-          <顯示結果 多元書寫={this.state.多元書寫}/>
+          <顯示結果 多元書寫={多元書寫}/>
           : null
         }
       </MainSection>
