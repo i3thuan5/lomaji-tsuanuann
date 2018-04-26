@@ -13,7 +13,8 @@ class App extends React.Component {
     this.state = {
       句子: '大家共下來',
       正在查詢: false,
-      多元書寫: null
+      多元書寫: null,
+      非成功狀況: null,
     };
     this.查 = this.查.bind(this);
   }
@@ -21,6 +22,7 @@ class App extends React.Component {
   查(句子) {
     this.setState({
       正在查詢: true,
+      非成功狀況: null,
     });
 
     axios.get(音標服務, {
@@ -30,17 +32,25 @@ class App extends React.Component {
       }
     })
     .then(function (response) {
-      if(response.data.hasOwnProperty('多元書寫')
-        && response.data.length !== 0){
+      // if(response.data.hasOwnProperty('多元書寫')
+      //   && response.data.length !== 0){
+      //   // success
+      //   this.setState({
+      //     多元書寫: response.data.多元書寫,
+      //     正在查詢: false
+      //   });
+      // }else{
+        // API version error
         this.setState({
-          多元書寫: response.data.多元書寫,
+          非成功狀況: '回傳資料不存在多元書寫',
           正在查詢: false
         });
-      }
+      // }
     }.bind(this))
     .catch(function (error) {
-      console.log('error', error);
+      // ajax error
       this.setState({
+        非成功狀況: 'ajax error',
         正在查詢: false,
       });
     }.bind(this));
@@ -57,6 +67,11 @@ class App extends React.Component {
         {
           this.state.多元書寫 ?
           <顯示結果 多元書寫={多元書寫}/>
+          : null
+        }
+        {
+          this.state.非成功狀況 ?
+          this.state.非成功狀況
           : null
         }
       </MainSection>
