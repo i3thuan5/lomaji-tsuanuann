@@ -7,11 +7,6 @@ import Kiat4Ko2 from './元件/顯示結果';
 import Iah8Kha1 from './元件/頁腳';
 import './App.css';
 
-if (process.env.NODE_ENV !== 'production') {
-  const {whyDidYouUpdate} = require('why-did-you-update');
-  whyDidYouUpdate(React);
-}
-
 class App extends React.Component {
   constructor(props){
     super(props);
