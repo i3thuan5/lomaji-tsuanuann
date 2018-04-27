@@ -16,7 +16,10 @@ class 查詢 extends React.PureComponent {
           <textarea defaultValue={預設句子}
           ref={(c) => { this.refText = c; }}
           rows='3' 
-          placeholder='欲轉換書寫的臺羅、白話字'/>
+          placeholder={
+            '欲轉換書寫的臺羅傳統調、臺羅數字調、'+
+            '白話字傳統調、白話字數字調'
+          }/>
         </div>
 
         <div className="app clearing">
