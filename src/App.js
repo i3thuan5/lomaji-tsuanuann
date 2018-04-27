@@ -6,6 +6,11 @@ import Su1Jip8 from './元件/查詢';
 import Kiat4Ko2 from './元件/顯示結果';
 import './App.css';
 
+if (process.env.NODE_ENV !== 'production') {
+  const {whyDidYouUpdate} = require('why-did-you-update');
+  whyDidYouUpdate(React);
+}
+
 class App extends React.Component {
   constructor(props){
     super(props);
