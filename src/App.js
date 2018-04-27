@@ -2,8 +2,8 @@ import React from 'react';
 import axios from 'axios';
 import { MainSection } from 'demo-ui';
 import { 音標服務 } from './後端網址';
-import 查詢 from './元件/查詢';
-import 顯示結果 from './元件/顯示結果';
+import Su1Jip8 from './元件/查詢';
+import Kiat4Ko2 from './元件/顯示結果';
 import './App.css';
 
 class App extends React.Component {
@@ -59,13 +59,13 @@ class App extends React.Component {
     let {句子, 正在查詢, 多元書寫} = this.state;
     return (
       <MainSection>
-        <查詢 
+        <Su1Jip8 
           預設句子={句子}
           正在查詢={正在查詢}
           handleClick={this.查}/>
         {
           this.state.多元書寫 ?
-          <顯示結果 多元書寫={多元書寫}/>
+          <Kiat4Ko2 多元書寫={多元書寫}/>
           : null
         }
         {
