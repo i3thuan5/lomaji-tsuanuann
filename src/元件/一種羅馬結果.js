@@ -15,7 +15,7 @@ const 一種羅馬結果 = ({類型, 羅馬陣列}) => {
             return (<p key={key}>{一句結果}</p>);
           })
         }
-        <CopyButton 複製內容={整段羅馬}/>   
+        <CopyButton 複製內容={整段羅馬} 按鈕名="Khok"/>   
       </div>
     </Block>
   );
