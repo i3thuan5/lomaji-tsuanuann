@@ -3,7 +3,7 @@ import { Block, CopyButton } from 'demo-ui';
 import 'semantic-ui-css/components/segment.min.css';
 import 'semantic-ui-css/components/label.min.css';
 
-const 一種羅馬結果 = ({類型, 羅馬陣列}) => {
+const Tsit8Kiat4Ko2 = ({類型, 羅馬陣列}) => {
   const reducer = (accumulator, currentValue) => accumulator + ' ' + currentValue;
   let 整段羅馬 = 羅馬陣列.reduce(reducer, '')
   return (
@@ -21,4 +21,4 @@ const 一種羅馬結果 = ({類型, 羅馬陣列}) => {
   );
 };
 
-export default 一種羅馬結果;
+export default Tsit8Kiat4Ko2;
