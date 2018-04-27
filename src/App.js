@@ -66,15 +66,11 @@ class App extends React.Component {
             正在查詢={正在查詢}
             handleClick={this.查}/>
           {
-            this.state.多元書寫 ?
-            <Kiat4Ko2 多元書寫={多元書寫}/>
-            : null
-          }
-          {
             this.state.非成功狀況 ?
             this.state.非成功狀況
             : null
           }
+          <Kiat4Ko2 多元書寫={多元書寫}/>
         </MainSection>
 
         <Iah8Kha1/>

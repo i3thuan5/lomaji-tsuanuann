@@ -14,8 +14,12 @@ const Tsit8Kiat4Ko2 = ({類型, 羅馬陣列}) => {
           羅馬陣列.map((一句結果, key) => {
             return (<p key={key}>{一句結果}</p>);
           })
-        }
-        <CopyButton 複製內容={整段羅馬} 按鈕名="Khok"/>   
+      }
+      {
+        整段羅馬 ?
+        <CopyButton 複製內容={整段羅馬} 按鈕名="Khok"/>
+        : <span className="App-hint-text">無內容</span>
+      }
       </div>
     </Block>
   );
