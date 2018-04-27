@@ -1,10 +1,10 @@
 import React from 'react';
 import axios from 'axios';
+import { MainSection } from 'demo-ui';
+import { 音標服務 } from './後端網址';
 import 查詢 from './元件/查詢';
 import 顯示結果 from './元件/顯示結果';
-import { MainSection } from 'demo-ui';
 import './App.css';
-import { 音標服務 } from './後端網址';
 
 class App extends React.Component {
   constructor(props){
