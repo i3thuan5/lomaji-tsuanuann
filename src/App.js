@@ -4,8 +4,7 @@ import 查詢 from './元件/查詢';
 import 顯示結果 from './元件/顯示結果';
 import { MainSection } from 'demo-ui';
 import './App.css';
-
-let 音標服務 = "https://服務.意傳.台灣/標漢字音標"
+import { 音標服務 } from './後端網址';
 
 class App extends React.Component {
   constructor(props){
@@ -32,20 +31,20 @@ class App extends React.Component {
       }
     })
     .then(function (response) {
-      // if(response.data.hasOwnProperty('多元書寫')
-      //   && response.data.length !== 0){
-      //   // success
-      //   this.setState({
-      //     多元書寫: response.data.多元書寫,
-      //     正在查詢: false
-      //   });
-      // }else{
+      if(response.data.hasOwnProperty('多元書寫')
+        && response.data.length !== 0){
+        // success
+        this.setState({
+          多元書寫: response.data.多元書寫,
+          正在查詢: false
+        });
+      }else{
         // API version error
         this.setState({
           非成功狀況: '回傳資料不存在多元書寫',
           正在查詢: false
         });
-      // }
+      }
     }.bind(this))
     .catch(function (error) {
       // ajax error
