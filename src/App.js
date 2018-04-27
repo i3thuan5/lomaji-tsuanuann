@@ -1,16 +1,17 @@
 import React from 'react';
 import axios from 'axios';
-import { MainSection } from 'demo-ui';
+import { MainSection, Layout } from 'demo-ui';
 import { 音標服務 } from './後端網址';
 import Su1Jip8 from './元件/查詢';
 import Kiat4Ko2 from './元件/顯示結果';
+import Iah8Kha1 from './元件/頁腳';
 import './App.css';
 
 class App extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      句子: '大家共下來',
+      句子: null,
       正在查詢: false,
       多元書寫: null,
       非成功狀況: null,
@@ -58,22 +59,22 @@ class App extends React.Component {
   render() {
     let {句子, 正在查詢, 多元書寫} = this.state;
     return (
-      <MainSection>
-        <Su1Jip8 
-          預設句子={句子}
-          正在查詢={正在查詢}
-          handleClick={this.查}/>
-        {
-          this.state.多元書寫 ?
+      <Layout>
+        <MainSection>
+          <Su1Jip8 
+            預設句子={句子}
+            正在查詢={正在查詢}
+            handleClick={this.查}/>
+          {
+            this.state.非成功狀況 ?
+            this.state.非成功狀況
+            : null
+          }
           <Kiat4Ko2 多元書寫={多元書寫}/>
-          : null
-        }
-        {
-          this.state.非成功狀況 ?
-          this.state.非成功狀況
-          : null
-        }
-      </MainSection>
+        </MainSection>
+
+        <Iah8Kha1/>
+      </Layout>
     );
   }
 }

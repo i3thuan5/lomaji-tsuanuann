@@ -7,7 +7,7 @@ class 查詢 extends React.PureComponent {
     this.props.handleClick(句子);
   }
   render() {
-    let {預設句子, 正在查詢} = this.props;
+    let { 預設句子, 正在查詢 } = this.props;
     return (
       <form className='ui form'
        onSubmit={this.送出.bind(this)}>
@@ -15,7 +15,11 @@ class 查詢 extends React.PureComponent {
         <div className="app block">
           <textarea defaultValue={預設句子}
           ref={(c) => { this.refText = c; }}
-          rows='3' />
+          rows='3' 
+          placeholder={
+            '欲轉換書寫的臺羅傳統調、臺羅數字調、'+
+            '白話字傳統調、白話字數字調'
+          }/>
         </div>
 
         <div className="app clearing">
@@ -23,7 +27,7 @@ class 查詢 extends React.PureComponent {
             `ui huge primary right floated button ${
             正在查詢 ? "disabled" : ""}`}
             type='submit'
-          >查</button>
+          >轉換羅馬字</button>
         </div>
 
       </form>
