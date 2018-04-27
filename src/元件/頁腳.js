@@ -7,7 +7,7 @@ const sites = [
     url: "https://github.com/i3thuan5/lo5ma2ji7_tsuan2huan7",
   },
   {
-    title: "詞彙分級",
+    title: "詞彙分級網站",
     url: "https://xn--kbrr83a6ixbzl.xn--v0qr21b.xn--kpry57d/",
   },
   {
