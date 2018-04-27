@@ -11,7 +11,7 @@ class App extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      句子: '大家共下來',
+      句子: null,
       正在查詢: false,
       多元書寫: null,
       非成功狀況: null,
