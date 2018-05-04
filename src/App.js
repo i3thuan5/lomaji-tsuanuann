@@ -13,7 +13,7 @@ class App extends React.Component {
     this.state = {
       句子: null,
       正在查詢: false,
-      多元書寫: null,
+      查詢結果: null,
       非成功狀況: null,
     };
     this.查 = this.查.bind(this);
@@ -27,22 +27,22 @@ class App extends React.Component {
 
     axios.get(音標服務, {
       params: {
-        查詢腔口: "閩南語",
+        //查詢腔口: "閩南語",
         查詢語句: 句子,
       }
     })
     .then(function (response) {
-      if(response.data.hasOwnProperty('多元書寫')
-        && response.data.length !== 0){
+      if(response.data.hasOwnProperty('臺羅')
+        && response.data.hasOwnProperty('白話字')){
         // success
         this.setState({
-          多元書寫: response.data.多元書寫,
+          查詢結果: response.data,
           正在查詢: false
         });
       }else{
         // API version error
         this.setState({
-          非成功狀況: '回傳資料不存在多元書寫',
+          非成功狀況: '回傳資料不存在臺羅和白話字',
           正在查詢: false
         });
       }
@@ -57,7 +57,7 @@ class App extends React.Component {
   }
 
   render() {
-    let {句子, 正在查詢, 多元書寫} = this.state;
+    let {句子, 正在查詢, 查詢結果} = this.state;
     return (
       <Layout>
         <MainSection>
@@ -70,7 +70,7 @@ class App extends React.Component {
             this.state.非成功狀況
             : null
           }
-          <Kiat4Ko2 多元書寫={多元書寫}/>
+          <Kiat4Ko2 查詢結果={查詢結果}/>
         </MainSection>
 
         <Iah8Kha1/>
