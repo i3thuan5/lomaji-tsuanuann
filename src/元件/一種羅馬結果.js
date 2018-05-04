@@ -3,9 +3,7 @@ import { Block, CopyButton } from 'demo-ui';
 import 'semantic-ui-css/components/segment.min.css';
 import 'semantic-ui-css/components/label.min.css';
 
-const Tsit8Kiat4Ko2 = ({類型, 羅馬陣列}) => {
-  const reducer = (accumulator, currentValue) => accumulator + ' ' + currentValue;
-  let 整段羅馬 = 羅馬陣列.reduce(reducer, '')
+const Tsit8Kiat4Ko2 = ({類型, 羅馬陣列, 整段羅馬}) => {
   return (
     <Block>
       <div className="ui segment">
