@@ -18,7 +18,7 @@ class 查詢 extends React.PureComponent {
           rows='3' 
           placeholder={
             '欲轉換書寫的臺羅傳統調、臺羅數字調、'+
-            '白話字傳統調、白話字數字調、教典漢字'
+            '白話字傳統調、白話字數字調、漢羅'
           }/>
         </div>
 
