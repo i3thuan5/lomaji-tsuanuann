@@ -4,5 +4,5 @@
 將白話字傳統調/數字調、臺羅傳統調/數字調，攏轉換做傳統調。
 後端使用[台灣言語工具](https://github.com/i3thuan5/tai5-uan5_gian5-gi2_kang1-ku7)。
 
-# MIT LICENSE
-本專案的授權檔請看[LICENSE](./license)
+# MIT 授權
+本專案的授權檔請看[LICENSE](./LICENSE)
