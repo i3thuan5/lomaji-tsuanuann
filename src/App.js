@@ -64,7 +64,8 @@ class App extends React.Component {
           <Su1Jip8 
             預設句子={句子}
             正在查詢={正在查詢}
-            handleClick={this.查}/>
+            handleClick={this.查}
+            />
           {
             this.state.非成功狀況 ?
             this.state.非成功狀況

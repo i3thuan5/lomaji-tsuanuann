@@ -1,7 +1,7 @@
 import React from 'react';
 import Tsit8Kiat4Ko2 from './一種羅馬結果';
 
-const 顯示結果 = ({查詢結果}) => {
+const 顯示結果 = ({查詢結果, liuA}) => {
   let 臺羅陣列 = [];
   let 白話字陣列 = [];
   let 臺羅 = null;
@@ -18,8 +18,9 @@ const 顯示結果 = ({查詢結果}) => {
   }
   return (
   <div>
-    <Tsit8Kiat4Ko2 類型="臺羅" 羅馬陣列={臺羅陣列} 整段羅馬={臺羅}/>
-    <Tsit8Kiat4Ko2 類型="白話字" 羅馬陣列={白話字陣列} 整段羅馬={白話字}/>
+    {liuA}
+    <Tsit8Kiat4Ko2 類型="臺羅" 按鈕名="Khok(Alt+Z)" 羅馬陣列={臺羅陣列} 整段羅馬={臺羅}/>
+    <Tsit8Kiat4Ko2 類型="白話字" 按鈕名="Khok(Alt+X)" 羅馬陣列={白話字陣列} 整段羅馬={白話字}/>
   </div>
   );
 }
