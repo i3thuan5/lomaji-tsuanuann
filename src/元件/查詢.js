@@ -1,6 +1,10 @@
 import React from 'react';
 
 class 查詢 extends React.PureComponent {
+  constructor(props) {
+    super(props);
+    this.myRef = React.createRef();
+  }
   送出(e) {
     e.preventDefault();
     let 句子 = this.refText.value;
@@ -11,7 +15,7 @@ class 查詢 extends React.PureComponent {
     console.log('ee',e.ctrlKey,e.key,e.altKey)
     if(e.ctrlKey && e.key==='Enter')
     {
-      console.log('go')
+      this.myRef.current.click();
     }
     else if(e.ctrlKey && e.altKey && e.key==='z')
     {
@@ -44,7 +48,8 @@ class 查詢 extends React.PureComponent {
             `ui huge primary right floated button ${
             正在查詢 ? "disabled" : ""}`}
             type='submit'
-          >轉換羅馬字</button>
+            ref={this.myRef}
+          >轉換羅馬字(Ctrl+Enter)</button>
         </div>
 
       </form>
