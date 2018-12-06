@@ -3,7 +3,7 @@ import { Block, CopyButton } from 'demo-ui';
 import 'semantic-ui-css/components/segment.min.css';
 import 'semantic-ui-css/components/label.min.css';
 
-const Tsit8Kiat4Ko2 = ({類型, 羅馬陣列, 整段羅馬}) => {
+const Tsit8Kiat4Ko2 = ({類型, 按鈕名, 羅馬陣列, 整段羅馬}) => {
   return (
     <Block>
       <div className="ui segment">
@@ -15,7 +15,9 @@ const Tsit8Kiat4Ko2 = ({類型, 羅馬陣列, 整段羅馬}) => {
       }
       {
         整段羅馬 ?
-        <CopyButton 複製內容={整段羅馬} 按鈕名="Khok"/>
+        <div id={類型}>
+          <CopyButton 複製內容={整段羅馬} 按鈕名={按鈕名}/>
+        </div>
         : <span className="App-hint-text">無內容</span>
       }
       </div>
