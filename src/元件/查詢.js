@@ -43,7 +43,7 @@ class 查詢 extends React.PureComponent {
           <textarea
             ref={this.tsua}
             defaultValue={預設句子}
-            onKeyPress={this.phahJi.bind(this)}
+            onKeyDown={this.phahJi.bind(this)}
             rows='3' 
             placeholder={
               '欲轉換書寫的臺羅傳統調、臺羅數字調、'+
