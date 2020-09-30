@@ -23,7 +23,7 @@ const sites = [
     url: "http://taiwanese.ntcu.edu.tw/",
   },
   {
-    title: "意傳科技維護",
+    title: "意傳科技",
     url: "https://ithuan.tw/",
   },];
 
