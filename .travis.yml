@@ -5,7 +5,7 @@ node_js:
 before_deploy: npm run build
 deploy:
   provider: pages
-  fqdn: xn--m7rr8i4sil03a3tchtsc3hztv.xn--v0qr21b.xn--kpry57d
+  fqdn: lomaji.ithuan.tw
   skip_cleanup: true
   local_dir: build/
   github_token:
